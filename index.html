@@ -28,11 +28,12 @@
             computerChoice="scissors"
         }
         console.log(computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1).toLowerCase());
-           
         let humanScore=0;
-        let computerScore=0;
-
+        let computerScore=0;   
+        function playGame(){
+            for (let i=0;i<5;i++){
         function playRound(humanChoice, computerChoice) {
+            humanChoice=prompt("Choose Rock Paper or Scissors.");
             if (humanChoice==="rock" && computerChoice==="scissors"){
                 humanScore++;
                 return "You win! Rock beats scissors!";
@@ -49,8 +50,22 @@
                 return `You lose! ${computerChoice} beats ${humanChoice}`;
             } 
 }
+        } 
 console.log(playRound(humanChoice, computerChoice));
 console.log(`The score is ${humanScore}-${computerScore}`);
+return finalScore(humanScore, computerScore);
+    }
+    playGame();
+
+    function finalScore(){
+        if (humanScore > computerScore){
+            return "Congrats! You beat the Computer!";
+        } else {
+            return "Game Over!";
+        }
+    }
+    console.log(finalScore(humanScore, computerScore));
+
     
         
     </script>
