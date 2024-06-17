@@ -8,58 +8,49 @@
 <body>
     <script>
         console.log("Hello World");
-    let humanChoice=prompt("Choose Rock Paper or Scissors");
+    
+        let humanChoice=prompt("Choose Rock Paper or Scissors");
     function getHumanChoice(){
         return humanChoice.toLowerCase();
     }
     getHumanChoice();
     console.log(humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1).toLowerCase());
-    
+
         function getComputerChoice(min, max){
             return Math.floor(Math.random() * (max - min + 1) + min);
 }
         let computerChoice=getComputerChoice(1, 3);
-        if (computerChoice==1){
+        if (computerChoice===1){
             computerChoice="rock";
-        } else if (computerChoice==2){
+        } else if (computerChoice===2){
             computerChoice="paper"
         } else {
             computerChoice="scissors"
         }
         console.log(computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1).toLowerCase());
-        
+           
         let humanScore=0;
         let computerScore=0;
 
         function playRound(humanChoice, computerChoice) {
-            if (humanChoice=="rock" & computerChoice=="scissors"){
+            if (humanChoice==="rock" && computerChoice==="scissors"){
                 humanScore++;
                 return "You win! Rock beats scissors!";
-            }else if (humanChoice=="scissors" & computerChoice=="paper"){
+            }else if (humanChoice==="scissors" && computerChoice==="paper"){
                 humanScore++;
                 return "You win! Scissors beats paper!";
-            }else if (humanChoice=="paper" & computerChoice=="rock"){
+            }else if (humanChoice==="paper" && computerChoice==="rock"){
                 humanScore++;
                 return "You win! Paper beats rock!";
-            }else if (humanChoice == computerChoice){
+            }else if (humanChoice === computerChoice){
                     return "It's a tie!";    
             }else {
                 computerScore++;
                 return `You lose! ${computerChoice} beats ${humanChoice}`;
             } 
 }
-
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-
-playRound(humanSelection, computerSelection);
-
-
 console.log(playRound(humanChoice, computerChoice));
 console.log(`The score is ${humanScore}-${computerScore}`);
-            
-           
-
     
         
     </script>
