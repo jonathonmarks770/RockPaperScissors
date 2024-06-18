@@ -7,6 +7,11 @@
 </head>
 <body>
     <script>
+function getHumanChoice(){
+    input=prompt("Choose Rock Paper Scissors"); 
+    return input.toLowerCase();
+}
+
 function getComputerChoice(){
     let number = Math.random();
     if (number<0.33){
@@ -46,9 +51,8 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function playGame(){
-    for (let i=1;i<6;i++){
-        let humanSelection=prompt(`Ready for Round ${i}? Choose Rock Paper or Scissors.`);
-        humanSelection = humanSelection.toLowerCase();
+    for (let i=0;i<5;i++ || computerScore<4){
+        const humanSelection = getHumanChoice();
         const computerSelection = getComputerChoice();
         console.log(humanSelection.charAt(0).toUpperCase() + humanSelection.slice(1).toLowerCase());
         console.log(computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1).toLowerCase());
@@ -57,7 +61,7 @@ function playGame(){
     if (humanScore>computerScore){
         console.log("Congrats! You beat the computer!");
     } else if (humanScore==computerScore){
-        console.log("It's a tie! Refresh to play again.")
+        console.log("You tied with the computer")
     } 
     else {
         console.log("Game Over!");
