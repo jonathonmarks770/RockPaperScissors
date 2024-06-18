@@ -7,8 +7,6 @@
 </head>
 <body>
     <script>
-        
-
 function getComputerChoice(){
     let number = Math.random();
     if (number<0.33){
@@ -33,7 +31,7 @@ function playRound(humanChoice, computerChoice) {
           } else if (humanChoice === "paper" && computerChoice === "rock") {
             humanScore++;
             return `You win! Paper beats rock! Score: ${humanScore} to ${computerScore}`;
-          } else if (humanChoice==="rock" && computerChoice==="paper") {
+          } else if (humanChoice ==="rock" && computerChoice ==="paper") {
             computerScore++;
             return `You lose! Paper beats rock! Score: ${humanScore} to ${computerScore}`;
           } else if (humanChoice === "paper" && computerChoice === "scissors") {
@@ -50,6 +48,7 @@ function playRound(humanChoice, computerChoice) {
 function playGame(){
     for (let i=1;i<6;i++){
         let humanSelection=prompt(`Ready for Round ${i}? Choose Rock Paper or Scissors.`);
+        humanSelection = humanSelection.toLowerCase();
         const computerSelection = getComputerChoice();
         console.log(humanSelection.charAt(0).toUpperCase() + humanSelection.slice(1).toLowerCase());
         console.log(computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1).toLowerCase());
