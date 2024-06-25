@@ -2,82 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Rock Paper Scissors</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="js-file.js"defer></script>
 </head>
 <body>
-    <script>
-function getHumanChoice(){
-    input=prompt("Choose Rock Paper Scissors"); 
-    return input.toLowerCase();
-}
-
-function getComputerChoice(){
-    let number = Math.random();
-    if (number<0.33){
-        return "rock";
-    } else if (number>0.66){
-        return "scissors";
-    } else {
-        return "paper";
-    }
-}   
-
-let humanScore = 0;
-let computerScore = 0;
-
-function playRound(humanChoice, computerChoice) {
-    if (humanChoice === "rock" && computerChoice === "scissors") {
-            humanScore++;
-            return `You win! Rock beats scissors! Score: ${humanScore} to ${computerScore}`;
-          } else if (humanChoice === "scissors" && computerChoice === "paper") {
-            humanScore++;
-            return `You win! Scissors beats paper! Score: ${humanScore} to ${computerScore}`;
-          } else if (humanChoice === "paper" && computerChoice === "rock") {
-            humanScore++;
-            return `You win! Paper beats rock! Score: ${humanScore} to ${computerScore}`;
-          } else if (humanChoice ==="rock" && computerChoice ==="paper") {
-            computerScore++;
-            return `You lose! Paper beats rock! Score: ${humanScore} to ${computerScore}`;
-          } else if (humanChoice === "paper" && computerChoice === "scissors") {
-            computerScore++;
-            return `You lose! Scissors beats paper! Score: ${humanScore} to ${computerScore}`;
-          } else if (humanChoice === "scissors" && computerChoice === "rock") {
-            computerScore++;
-            return `You lose! rock beats scissors! Score: ${humanScore} to ${computerScore}`;
-          } else {
-            return `It\'s a tie! Score: ${humanScore} to ${computerScore}`;
-          }
-}
-
-function playGame(){
-    for (let i=0;i<5;i++ || computerScore<4){
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
-        console.log(humanSelection.charAt(0).toUpperCase() + humanSelection.slice(1).toLowerCase());
-        console.log(computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1).toLowerCase());
-        console.log(playRound(humanSelection, computerSelection));
-    }
-    if (humanScore>computerScore){
-        console.log("Congrats! You beat the computer!");
-    } else if (humanScore==computerScore){
-        console.log("You tied with the computer")
-    } 
-    else {
-        console.log("Game Over!");
-    }
-}
-playGame();
-
-
-
-
-
-
-    
-
-    
-        
-    </script>
+    <div class="content">
+    <div class="choose">Choose Rock Paper or Scissors</div>
+    <div class="buttons">
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+    </div>
+    <div id="result"></div>
+    <div id="winner"></div>
+    <div class="footer"></div>
+</div>
 </body>
 </html>
