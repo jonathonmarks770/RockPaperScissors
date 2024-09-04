@@ -36,7 +36,7 @@ function playRound(humanChoice, computerChoice) {
             return result.textContent = `The computer chose scissors. You lose! Scissors beats paper! Score: ${humanScore} to ${computerScore}`;
           } else if (humanChoice === "scissors" && computerChoice === "rock") {
             computerScore++;
-            return result.textContent = `The computer chose rock. You lose! rock beats scissors! Score: ${humanScore} to ${computerScore}`;
+            return result.textContent = `The computer chose rock. You lose! Rock beats scissors! Score: ${humanScore} to ${computerScore}`;
           } else {
             return result.textContent = `Both players chose ${computerSelection}. It\'s a tie! Score: ${humanScore} to ${computerScore}`;
           }
